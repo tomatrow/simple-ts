@@ -175,7 +175,7 @@ function getSimpleShellCommand(commands: SimpleCommand[]) {
     return commands.map(stringifySimpleCommand).join("\n")
 }
 
-export function executeSimpleScript(...commands: []) {
+export function executeSimpleScript(...commands: SimpleCommand[]) {
     let process: ChildProcessWithoutNullStreams
     const promise = new Promise<string>((resolve, reject) => {
         const input = getSimpleShellCommand(commands)
